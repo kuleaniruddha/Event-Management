@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIE Event Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #2563eb;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #1d4ed8;
+            padding: 6px 12px;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #1e40af;
+        }
+
+        /* Photo Gallery Section */
+        .photo-gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .photo-section {
+            width: 30%;
+            text-align: center;
+            position: relative;
+        }
+
+        .photo-section h3 {
+            color: #1e40af;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        /* Carousel styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .photo-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Hover Effects */
+        .photo-slide img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer nav (if used) */
+        footer nav {
+            background-color: #2563eb;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Adjustments for Responsiveness */
+        @media (max-width: 768px) {
+            .photo-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .photo-section {
+                width: 80%;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>XIE College Event Management</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.php">Events</a>
+            <a href="register.html">Register</a>
+            <a href="winners.php">Winners</a>
+            <a href="login.php">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to XIE Event Management System</h2>
+        <p>Manage registrations for Spandan, Transmission, and Sparx.</p>
+
+        <section class="photo-gallery">
+            <!-- Spandan Event -->
+            <div class="photo-section">
+                <h3>Spandan</h3>
+                <div class="carousel-container">
+                    <div class="photo-slide" id="spandanSlide">
+                        <img src="spandhan1.png" alt="Spandhan 1">
+                        <img src="spandhan2.png" alt="Spandhan 2">
+                        <img src="spandhan3.png" alt="Spandhan 3">
+                        <img src="spandhan4.png" alt="Spandhan 4">
+                        <img src="spandhan5.png" alt="Spandhan 5">
+                    </div>
+                    <button class="carousel-button prev" onclick="moveSlide('spandan', -1)">&#10094;</button>
+                    <button class="carousel-button next" onclick="moveSlide('spandan', 1)">&#10095;</button>
+                </div>
+            </div>
+        
+            <!-- Transmission Event -->
+            <div class="photo-section">
+                <h3>Transmission</h3>
+                <div class="carousel-container">
+                    <div class="photo-slide" id="transmissionSlide">
+                        <img src="transmission1.png" alt="Transmission 1">
+                        <img src="transmission2.png" alt="Transmission 2">
+                        <img src="transmission3.png" alt="Transmission 3">
+                        <img src="transmission4.png" alt="Transmission 4">
+                        <img src="transmission5.png" alt="Transmission 5">
+                    </div>
+                    <button class="carousel-button prev" onclick="moveSlide('transmission', -1)">&#10094;</button>
+                    <button class="carousel-button next" onclick="moveSlide('transmission', 1)">&#10095;</button>
+                </div>
+            </div>
+        
+            <!-- Sparx Event -->
+            <div class="photo-section">
+                <h3>Sparx</h3>
+                <div class="carousel-container">
+                    <div class="photo-slide" id="sparxSlide">
+                        <img src="sparx1.jpg" alt="Sparx 1">
+                        <img src="sparx2.jpg" alt="Sparx 2">
+                        <img src="sparx3.jpg" alt="Sparx 3">
+                        <img src="sparx4.jpg" alt="Sparx 4">
+                        <img src="sparx5.jpg" alt="Sparx 5">
+                    </div>
+                    <button class="carousel-button prev" onclick="moveSlide('sparx', -1)">&#10094;</button>
+                    <button class="carousel-button next" onclick="moveSlide('sparx', 1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="register.html">Register</a>
+            <a href="winners.php">Winners</a>
+            <a href="login.php">Login</a>
+        </nav>
+    </footer>
+
+    <script>
+        // Function to move the slide
+        function moveSlide(event, direction) {
+            var slide = document.getElementById(event + 'Slide');
+            var slides = slide.children;
+            var currentIndex = Array.from(slides).findIndex(img => img.style.transform === 'translateX(0%)');
+            
+            // If no slide is visible, set the first one
+            if (currentIndex === -1) {
+                currentIndex = 0;
+                slides[currentIndex].style.transform = 'translateX(0%)';
+            }
+            
+            var newIndex = currentIndex + direction;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            
+            // Set the new visible slide
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.transform = `translateX(${(i - newIndex) * 100}%)`;
+            }
+        }
+
+        // Initialize the first slide
+        document.addEventListener('DOMContentLoaded', () => {
+            moveSlide('spandan', 0);  // Show first image of Spandan
+            moveSlide('transmission', 0);  // Show first image of Transmission
+            moveSlide('sparx', 0);  // Show first image of Sparx
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+}
+
+nav {
+    background-color: #2563eb;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #1d4ed8;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #1e40af;
+}
+
+/* Photo Gallery Section */
+.photo-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.photo-section {
+    width: 30%; /* Set width of each section */
+    text-align: center;
+}
+
+.photo-section h3 {
+    color: #1e40af;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+form {
+    max-width: 600px; /* Increased the max-width for a larger form */
+    margin: 20px auto;
+    padding: 30px; /* Increased padding for more space inside the form */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 12px; /* Increased margin for better spacing */
+    font-weight: 600;
+    text-align: left;
+    font-size: 1.1em; /* Slightly increased font size */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 15px; /* Increased padding for larger input fields */
+    margin-bottom: 20px; /* Increased margin between inputs */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.1em; /* Increased font size inside inputs */
+}
+
+form button {
+    background-color: #2563eb;
+    color: white;
+    padding: 15px 25px; /* Increased padding for a larger button */
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em; /* Increased font size for the button */
+}
+
+form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Centering the Admin Login Form */
+.center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Footer nav (if used) */
+footer nav {
+    background-color: #2563eb;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer nav a {
+    margin: 0 10px;
+    color: white;  /* Ensure links are white and not affected by hover changes */
+    text-decoration: none;  /* Ensure no underline */
+}
+
+/* Adjustments for Responsiveness */
+@media (max-width: 768px) {
+    .photo-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-section {
+        width: 80%; /* Full width on small screens */
+    }
+
+    table {
+        width: 90%;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px; /* Slightly smaller font for smaller screens */
+    }
+}
+
+/* Hover Effects for Links */
+a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Utility Classes */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
